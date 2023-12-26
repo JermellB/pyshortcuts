@@ -299,8 +299,7 @@ class ShortcutFrame(wx.Frame):
                    startmenu=startmenu, executable=executable)
 
     def onCreate(self, event=None):
-        opts = self.read_form()
-        if opts is None:
+        if (opts := self.read_form()) is None:
             return
         script = opts.pop('script')
         make_shortcut(script, **opts)

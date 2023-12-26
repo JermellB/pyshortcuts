@@ -16,8 +16,7 @@ parser.add_option("-u", "--update", dest="update", metavar='update',
 (options, args) = parser.parse_args()
 
 update = float(options.update)
-maxtime = options.maxtime
-if maxtime is not None:
+if (maxtime := options.maxtime) is not None:
     maxtime = float(maxtime)
 
 t0 = time()
